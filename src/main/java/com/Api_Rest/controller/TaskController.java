@@ -1,6 +1,7 @@
 package com.Api_Rest.controller;
 
 import com.Api_Rest.persistence.entetys.Task;
+import com.Api_Rest.persistence.entetys.TaskState;
 import com.Api_Rest.service.TaskService;
 import com.Api_Rest.service.dto.TaskDTO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,12 +21,17 @@ public class TaskController {
     }
 
     @PostMapping
-    public Task crearTarea(@RequestBody TaskDTO taskdto){
-    return this.taskService.CreateTask(taskdto);
+    public Task crearTarea(@RequestBody TaskDTO taskdto) {
+        return this.taskService.CreateTask(taskdto);
     }
 
     @GetMapping
-    public List<Task> Listar_Tareas(){
+    public List<Task> Listar_Tareas() {
         return this.taskService.getAll();
+    }
+
+    @GetMapping("/status/{status}")
+    public List<Task> Listar_Tareas_Por_Estados(@PathVariable("status") TaskState taskState) {
+        return this.taskService.listarPorEstado(taskState);
     }
 }
