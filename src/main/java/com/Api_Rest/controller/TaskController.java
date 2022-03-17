@@ -6,6 +6,8 @@ import com.Api_Rest.service.dto.TaskDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/task")
 public class TaskController {
@@ -20,5 +22,10 @@ public class TaskController {
     @PostMapping
     public Task crearTarea(@RequestBody TaskDTO taskdto){
     return this.taskService.CreateTask(taskdto);
+    }
+
+    @GetMapping
+    public List<Task> Listar_Tareas(){
+        return this.taskService.getAll();
     }
 }

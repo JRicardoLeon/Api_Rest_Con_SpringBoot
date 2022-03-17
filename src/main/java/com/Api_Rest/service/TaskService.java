@@ -7,6 +7,8 @@ import com.Api_Rest.service.dto.TaskDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class TaskService {
 
@@ -22,5 +24,9 @@ public class TaskService {
     public Task CreateTask(TaskDTO taskDTO){
         Task task = mapper.map(taskDTO);
        return this.taskRepository.save(task);
+    }
+
+    public List<Task> getAll(){
+        return this.taskRepository.findAll();
     }
 }
