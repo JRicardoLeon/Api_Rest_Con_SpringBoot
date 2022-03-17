@@ -16,8 +16,8 @@ public class Task {
 
     private String title;
     private String description;
-    private LocalDateTime creationDate;
-    private LocalDateTime finishDate;
+    private LocalDateTime TimeTask;
+    private LocalDateTime CreateDate;
     private boolean completed;
     private TaskState TaskState;
 
