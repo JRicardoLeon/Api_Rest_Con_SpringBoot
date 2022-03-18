@@ -18,7 +18,7 @@ public class TaskDTO_Task implements TaskDTOMapper<TaskDTO, Task>{
         task.setTimeTask(in.getTimeTask());
         task.setCreateDate(LocalDateTime.now());
         task.setCompleted(false);
-        task.setTaskState(TaskState.ON_TIME);
+        task.setTaskState(TaskState.LATE);
         return task;
     }
 }

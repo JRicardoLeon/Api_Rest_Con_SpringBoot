@@ -31,7 +31,10 @@ public class TaskService {
         return this.taskRepository.findAll();
     }
 
-    public List<Task> listarPorEstado(TaskState taskState){
-        return this.taskRepository.findAllByTaskStatus(taskState);
+    public List<Task> findAllByTaskState(TaskState status) {
+        return this.taskRepository.findByTaskState(status);
+  // return this.taskRepository.findAllTasks();
     }
+
+
 }

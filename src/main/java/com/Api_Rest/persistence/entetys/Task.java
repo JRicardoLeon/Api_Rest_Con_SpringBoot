@@ -1,6 +1,7 @@
 package com.Api_Rest.persistence.entetys;
 
 import lombok.Data;
+import org.springframework.context.annotation.Bean;
 
 import javax.persistence.*;
 
@@ -19,6 +20,6 @@ public class Task {
     private LocalDateTime TimeTask;
     private LocalDateTime CreateDate;
     private boolean completed;
-    private TaskState TaskState;
+    private TaskState taskState;
 
 }

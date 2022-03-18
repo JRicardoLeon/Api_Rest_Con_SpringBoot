@@ -1,7 +1,7 @@
 package com.Api_Rest.mapper;
 
-public interface TaskDTOMapper <entrada, salida>{
+public interface TaskDTOMapper <i, o>{
 
-    public salida map(entrada in);
+    public o map(i in);
 
 }

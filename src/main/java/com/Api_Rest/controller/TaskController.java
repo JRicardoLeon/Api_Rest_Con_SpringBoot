@@ -29,9 +29,9 @@ public class TaskController {
     public List<Task> Listar_Tareas() {
         return this.taskService.getAll();
     }
-
     @GetMapping("/status/{status}")
-    public List<Task> Listar_Tareas_Por_Estados(@PathVariable("status") TaskState taskState) {
-        return this.taskService.listarPorEstado(taskState);
+    public List<Task> findAllbyStatus(@PathVariable("status") TaskState status){
+        return this.taskService.findAllByTaskState(status);
     }
+
 }
